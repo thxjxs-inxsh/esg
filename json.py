@@ -23,13 +23,13 @@ def save_sec_cache(cache):
 
 # --- 2. INITIALIZATION ---
 try:
-    ee.Initialize(project='dauntless-glow-489009-m7')
+    ee.Initialize(project='project-id')
 except:
     print("GEE Initialization failed. Run 'earthengine authenticate'.")
 
 # API Keys
-SEC_API_KEY = "f56b7304f5fb3d3447f94e843136e602875c91ad19189e6f8004efa1c710b7e1"
-GEMINI_KEY = "AIzaSyBzUF0JYG9Y9wBwfGqKOfcpEfN2s3pKVow"
+SEC_API_KEY = "SEC API KEY"
+GEMINI_KEY = "Gemini"
 
 client = genai.Client(api_key=GEMINI_KEY)
 queryApi = QueryApi(api_key=SEC_API_KEY)
@@ -165,4 +165,5 @@ if __name__ == "__main__":
     
     # Optional: Write to a file
     with open("audit_result.json", "w") as outfile:
+
         json.dump(result, outfile, indent=4)
